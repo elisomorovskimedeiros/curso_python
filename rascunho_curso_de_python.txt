@@ -1,0 +1,52 @@
+instalar libs necessárias:
+
+$ sudo apt install git curl build-essential gcc make default-libmysqlclient-dev libssh-dev
+
+instalar python:
+
+$ sudo apt install python3.12-dev python3.12-full
+
+inicializar um ambiente virtual do python:
+
+$ cd Área\ de\ trabalho/
+$ mkdir projeto
+$ cd projeto/
+$ python3 -m venv venv
+
+inicializar o ambiente virtual e fazer o comando python apontar para o python atual:
+
+$ source venv/bin/activate
+(venv) $ which python
+/home/eli/Área de trabalho/projeto/venv/bin/python
+
+desativar ambiente virtual:
+$ deactivate
+
+Dentro do terminal do vscode, ativar o ambiente virtual, entrar na pasta venv e criar o arquivo de teste main.py, código:
+print (1 + 1)
+
+depois de salvar executar o código no terminal:
+
+python main.py
+
+a saída deve ser:
+2
+
+Como fazer o sistema rodar o comando python ao invés de python3 sem precisar de ambiente virtual?
+ rode o comando 
+$sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 1
+
+isso irá tornar o python3 o preferencial, caso queira desfazer a configuração faça:
+- Verifica a situação atual:
+$sudo update-alternatives --display python
+
+-remova a alternativa específica:
+$sudo update-alternatives --remove python /usr/bin/python3
+
+
+
+
+
+
+
+
